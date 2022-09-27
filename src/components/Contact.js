@@ -21,25 +21,26 @@ const Contact = ({ Contacts }) => {
       <Grid container spacing={1} direction="row" justify="flex-start" alignItems="flex-start" alignContent="stretch" wrap="nowrap">
         <Grid item xs={12}>
           <div className="CardContact">
-            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+            <List sx={{ width: "100%", paddingTop: "10px", bgcolor: "#DBF6F0", paddingBottom: "20px" }}>
               <div className="CardInner">
                 {Contacts &&
-                  Contacts.map((contact, index) => {
+                  Contacts.map((Contact, index) => {
                     return (
-                      <div key={index}>
+                      <div key={index} style={{ marginBottom: "5px" }}>
                         <ListItem alignItems="flex-start">
                           <ListItemAvatar className="listItemAvatar">
-                            <Avatar sx={{ width: 56, height: 56 }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                            <Avatar sx={{ width: 56, height: 56 }} alt={Contact.name} src={Contact.photo} />
                           </ListItemAvatar>
                           <ListItemText
-                            primary="Brunch this weekend?"
+                            primary={Contact.name}
                             secondary={
                               <React.Fragment>
-                                <Typography sx={{ display: "inline" }} component="span" variant="body2" color="text.primary">
-                                  Ali Connors
+                                <Typography sx={{ display: "block" }} component="span" variant="body2" color="text.secondary">
+                                  {Contact.phone}
                                 </Typography>
-                                {" — I'll be in your neighborhood doing errands this…"}
-                                <div>{contact.name}</div>
+                                <Typography sx={{ display: "block" }} component="span" variant="body2" color="text.secondary">
+                                  {Contact.email}
+                                </Typography>
                               </React.Fragment>
                             }
                           />

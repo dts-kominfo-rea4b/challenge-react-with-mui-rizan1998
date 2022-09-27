@@ -18,9 +18,12 @@ const App = () => {
   const [Contacts, setContacts] = useState("");
 
   useEffect(() => {
-    // getData();
     setContacts(contactsJSON);
   }, []);
+
+  const handleClick = (Contact) => {
+    setContacts([...Contacts, { name: Contact.name, phone: Contact.phone, email: Contact.email, photo: Contact.photo }]);
+  };
 
   return (
     <div className="App">
@@ -29,7 +32,7 @@ const App = () => {
           <Header />
         </Grid>
         <Grid item xs={6}>
-          <ContactForm />
+          <ContactForm handleClick={handleClick} />
         </Grid>
         <Grid item xs={6}>
           <Contact Contacts={Contacts} />
