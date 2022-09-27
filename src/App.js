@@ -2,7 +2,6 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ContactForm from "./components/ContactForm";
-import Contact3 from "./components/Contact3";
 import Contact from "./components/Contact";
 import { Grid } from "@mui/material";
 
