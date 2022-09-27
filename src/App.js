@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ContactForm from "./components/ContactForm";
+import Contact3 from "./components/Contact3";
 import Contact from "./components/Contact";
 import { Grid } from "@mui/material";
 
@@ -15,7 +16,7 @@ const App = () => {
   // Masukkan contacts yang sudah didapat dalam JSON sebagai initial state
   // Buatlah handler untuk menambahkan kontak baru yang akan dikirim ke ContactForm
 
-  const [Contacts, setContacts] = useState("");
+  const [Contacts, setContacts] = useState([]);
 
   useEffect(() => {
     setContacts(contactsJSON);
@@ -35,7 +36,14 @@ const App = () => {
           <ContactForm handleClick={handleClick} />
         </Grid>
         <Grid item xs={6}>
-          <Contact Contacts={Contacts} />
+          {Contacts &&
+            Contacts.map((data, index) => {
+              return (
+                <div key={index}>
+                  <Contact data={data} />
+                </div>
+              );
+            })}
         </Grid>
       </Grid>
     </div>
