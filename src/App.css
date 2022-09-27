@@ -41,3 +41,54 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* heading */
+.header-title{
+  font-weight: 400;
+}
+
+/* divider */
+.container-divider{
+  display: flex;
+  align-items: center;
+}
+
+
+.border-divider{
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.content-divider {
+  padding: 0 10px 0 10px;
+}
+
+.content-divider .secondary-title {
+  white-space: nowrap;
+}
+
+.CardForm {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.button-add-new{
+  margin-top: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.CardContact{
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.CardInner{
+  padding-right: 20px;
+}
+
+.listItemAvatar{
+  margin-right: 20px;
+}
